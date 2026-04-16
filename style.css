@@ -1,0 +1,402 @@
+/* --- GLOBAL RESET & VARIABLES --- */
+:root {
+    --bg-black: #050505;
+    --text-main: #E0E0E0;
+    --text-muted: #888888;
+    --accent: #FFFFFF;
+    --border-color: #333333;
+}
+
+@font-face {
+    font-family: 'ResidentEvilFont';
+    src: url('assets/requiem9.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-black);
+    color: var(--text-main);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-family: 'ResidentEvilFont', sans-serif;
+    font-weight: normal;
+    letter-spacing: 2px;
+}
+
+h2,
+h3 {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: normal;
+    letter-spacing: 1.6px;
+}
+
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    background: linear-gradient(to bottom, var(--bg-black), transparent);
+    transition: background-color 0.3s ease, padding 0.3s ease, border-bottom 0.3s ease;
+}
+
+.navbar.scrolled {
+    background: rgba(5, 5, 5, 0.95);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+}
+
+.logo {
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: var(--accent);
+}
+
+.nav-link {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: 1px;
+    letter-spacing: 1px;
+    ;
+}
+
+.nav-link a:hover {
+    color: var(--accent);
+}
+
+.hero-section {
+    height: 100vh;
+    background-image: url('assets/requiemleon.jpeg');
+    background-size: cover;
+    background-position: center top;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.2) 0%, rgba(5, 5, 5, 1) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    margin-top: 150px;
+}
+
+.hero-content h1 {
+    font-size: 5rem;
+    color: var(--accent);
+    margin-bottom: 10px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    letter-spacing: 5px;
+    color: var(--accent);
+    margin-bottom: 30px;
+}
+
+.description {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+.btn-outline {
+    border: 1px solid var(--text-muted);
+    padding: 12px 30px;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    border-color: var(--accent);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-solid {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    padding: 10px 25px;
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.btn-solid:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.cinematic-section {
+    padding: 100px 0;
+    background-color: var(--bg-black);
+}
+
+.character-section {
+    height: 100vh;
+    min-height: 800px;
+    background-color: var(--primary-dark);
+    background-image:
+        linear-gradient(to left, rgba(15, 15, 15, 0.2) 0%, rgba(15, 15, 15, 0.95) 80%, rgba(15, 15, 15, 1) 100%),
+        url('assets/leon.jpeg');
+    background-size: cover;
+    background-position: center top;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.character-container {
+    display: flex;
+    width: 100%;
+}
+
+.character-dossier {
+    max-width: 500px;
+    background: transparent;
+    padding: 45px;
+    color: var(--text-main);
+    margin-bottom: 300px;
+}
+
+.character-dossier h2 {
+    font-family: 'ResidentEvilFont', sans-serif;
+    font-size: 2.5rem;
+    color: var(--accent-red);
+    margin-bottom: 10px;
+}
+
+.character-dossier .subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.character-dossier p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: var(--text-light);
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 1px;
+}
+
+.character-dossier ul {
+    list-style-position: inside;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.character-dossiers {
+    max-width: 500px;
+    background: transparent;
+    padding: 45px;
+    color: var(--text-light);
+    margin-top: 350px;
+    justify-content: flex-end;
+}
+
+.character-dossiers p {
+    font-size: 0.85rem;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+/* --- GRID SECTION (Editions) --- */
+.text-center {
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--accent);
+}
+
+.section-subtitle {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 50px;
+}
+
+.grid-layout {
+    display: grid;
+    /* Adapting to 3 items based on your reference image */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.dark-card {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    text-align: left;
+    transition: border-color 0.3s ease;
+}
+
+.dark-card:hover {
+    border-color: #555;
+}
+
+.dark-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    font-size: 1.2rem;
+    color: var(--accent);
+    margin-bottom: 15px;
+}
+
+.card-content ul {
+    list-style-position: inside;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 30px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 15px;
+}
+
+.price {
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.btn-small {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 5px 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-small:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS (Maksimal lebar 768px)
+   ========================================= */
+@media (max-width: 768px) {
+
+    /* 1. Perbaikan Navbar */
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .nav-link {
+        margin-top: 10px;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-content {
+        margin-top: 80px;
+        padding: 0 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.8rem;
+        line-height: 1.1;
+    }
+
+    .subtitle {
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+    }
+
+    .character-section {
+        height: auto;
+        padding: 100px 20px;
+    }
+
+    .character-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .character-dossier,
+    .character-dossiers {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-right: 0;
+        padding: 25px;
+        border-radius: 8px;
+    }
+
+    .character-dossier h2 {
+        font-size: 2rem;
+    }
+}
