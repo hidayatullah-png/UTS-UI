@@ -170,7 +170,7 @@ h3 {
 }
 
 .cinematic-section {
-    padding: 100px 0;
+    padding: 30px 0;
     background-color: var(--bg-black);
 }
 
@@ -331,6 +331,98 @@ h3 {
 .btn-small:hover {
     border-color: var(--accent);
     color: var(--accent);
+}
+
+.location-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.location-text {
+    font-size: 0.9rem;
+    flex: 1;
+    text-align: left;
+    margin-top: 50px;
+}
+
+.location-text h2 {
+    font-size: 3rem;
+    color: var(--accent);
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    color: var(--accent);
+}
+
+.location-text p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.location-slider {
+    flex: 1;
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    scrollbar-width: none;
+}
+
+.location-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.location-card {
+    min-width: 350px;
+    height: 380px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: border-color 0.4s ease;
+}
+
+.location-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.location-card:hover {
+    border-color: var(--accent);
+}
+
+.location-card:hover img {
+    transform: scale(1.08);
+}
+
+.location-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 20px 20px;
+    background: linear-gradient(to bottom, transparent 0%, rgba(5, 5, 5, 0.8) 50%, rgba(5, 5, 5, 1) 100%);
+    text-align: left;
+}
+
+.location-info h3 {
+    font-family: 'Times New Roman', Times, serif;
+    /* Sesuai font-mu */
+    color: var(--accent);
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+.location-info p {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    letter-spacing: 1px;
 }
 
 footer {
