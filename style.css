@@ -463,24 +463,15 @@ footer {
     letter-spacing: 1px;
 }
 
-/* =========================================
-   CINEMATIC FADE-IN ANIMATION
-   ========================================= */
 .fade-in {
     opacity: 0;
-    /* Mulai dengan transparan/hilang */
     transform: translateY(40px);
-    /* Posisinya turun sedikit ke bawah */
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    /* Animasi mulus selama 0.8 detik */
 }
 
-/* Class ini akan ditambahkan otomatis oleh JavaScript saat di-scroll */
 .fade-in.show {
     opacity: 1;
-    /* Muncul sepenuhnya */
     transform: translateY(0);
-    /* Naik ke posisi aslinya */
 }
 
 /* =========================================

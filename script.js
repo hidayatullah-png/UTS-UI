@@ -53,31 +53,27 @@ if (locationSlider && prevBtn && nextBtn) {
     })
 }
 
-// =========================================
-// EFEK FADE-IN SAAT DI-SCROLL
-// =========================================
+// efek scroll
 const faders = document.querySelectorAll('.fade-in');
 
 const appearOptions = {
-    threshold: 0.15, // Animasi dimulai saat 15% elemen sudah masuk layar
-    rootMargin: "0px 0px -50px 0px" // Memicu sedikit lebih awal sebelum elemen benar-benar di tengah
+    threshold: 0.15, //elemen muncul
+    rootMargin: "0px 0px -50px 0px" 
 };
 
 const appearOnScroll = new IntersectionObserver(function (entries, observer) {
     entries.forEach(entry => {
-        // Jika elemen belum terlihat, jangan lakukan apa-apa
+
         if (!entry.isIntersecting) {
             return;
         } else {
-            // Jika terlihat, tambahkan class 'show' agar muncul perlahan
             entry.target.classList.add('show');
-            // Hentikan pantauan agar animasi tidak berulang-ulang saat scroll naik-turun
             observer.unobserve(entry.target);
         }
     });
 }, appearOptions);
 
-// Minta JavaScript mengamati semua elemen yang punya class 'fade-in'
+//liat class fade-in
 faders.forEach(fader => {
     appearOnScroll.observe(fader);
 });
