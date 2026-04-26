@@ -337,6 +337,7 @@ h3 {
     display: flex;
     align-items: center;
     gap: 40px;
+    position: relative;
 }
 
 .location-text {
@@ -425,6 +426,34 @@ h3 {
     letter-spacing: 1px;
 }
 
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    padding: 15px 10px;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.slider-btn:hover {
+    color: var(--accent);
+    background-color: rgba(5, 5, 5, 0.8);
+    border-color: var(--accent);
+}
+
+.prev-btn {
+    left: 48%
+}
+
+.next-btn {
+    right: -42px;
+}
+
 footer {
     text-align: center;
     padding: 40px;
@@ -432,6 +461,26 @@ footer {
     color: var(--text-muted);
     font-size: 0.8rem;
     letter-spacing: 1px;
+}
+
+/* =========================================
+   CINEMATIC FADE-IN ANIMATION
+   ========================================= */
+.fade-in {
+    opacity: 0;
+    /* Mulai dengan transparan/hilang */
+    transform: translateY(40px);
+    /* Posisinya turun sedikit ke bawah */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    /* Animasi mulus selama 0.8 detik */
+}
+
+/* Class ini akan ditambahkan otomatis oleh JavaScript saat di-scroll */
+.fade-in.show {
+    opacity: 1;
+    /* Muncul sepenuhnya */
+    transform: translateY(0);
+    /* Naik ke posisi aslinya */
 }
 
 /* =========================================
@@ -490,5 +539,9 @@ footer {
 
     .character-dossier h2 {
         font-size: 2rem;
+    }
+
+    .slider-btn {
+        display: none;
     }
 }
