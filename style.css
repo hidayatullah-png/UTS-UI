@@ -170,7 +170,7 @@ h3 {
 }
 
 .cinematic-section {
-    padding: 30px 0;
+    padding: 40px 0;
     background-color: var(--bg-black);
 }
 
@@ -265,7 +265,6 @@ h3 {
 
 .grid-layout {
     display: grid;
-    /* Adapting to 3 items based on your reference image */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }

@@ -43,12 +43,12 @@ const nextBtn = document.getElementById('nextBtn');
 if (locationSlider && prevBtn && nextBtn) {
     nextBtn.addEventListener('click', () => {
         locationSlider.scrollBy({
-            left: 270, behavior: 'smooth'
+            left: 300, behavior: 'smooth'
         })
     })
     prevBtn.addEventListener('click', () => {
         locationSlider.scrollBy({
-            left: -270, behavior: 'smooth'
+            left: -300, behavior: 'smooth'
         })
     })
 }
